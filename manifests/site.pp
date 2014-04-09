@@ -275,6 +275,13 @@ node default {
   $fontsdest = '/Library/Fonts'
   exec { 'Install DejaVuSansMono Font':
     command => "cp ${powerlinefonts}/DejaVuSansMono/*.ttf ${fontsdest}",
-    creates => "${fontsdest}/DejaVu Sans Mono for Powerline.ttf"
+    creates => "${fontsdest}/DejaVu Sans Mono for Powerline.ttf",
+    require => Repository[$powerlinefonts]
+  }
+
+  # zsh-notify repo
+  $zshnotify = "/Users/${::boxen_user}/.zsh-notify"
+  repository { $zshnotify:
+    source  => "marzocchi/zsh-notify"
   }
 }
