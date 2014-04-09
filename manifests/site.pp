@@ -95,7 +95,9 @@ node default {
   include git-flow
   include python
   include zsh
-  include prezto
+
+  # personal prezto branch
+  class { 'prezto': repo => 'sigriston/prezto' }
 
   # osx settings
   include osx::dock::autohide
