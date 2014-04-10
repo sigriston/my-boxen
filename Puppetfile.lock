@@ -134,6 +134,11 @@ GITHUBTARBALL
     sudo (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-tmux
+  specs:
+    tmux (1.0.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-transmission
   specs:
     transmission (1.1.0)
@@ -162,6 +167,11 @@ GITHUBTARBALL
   remote: boxen/puppet-zsh
   specs:
     zsh (1.0.0)
+
+GITHUBTARBALL
+  remote: glarizza/puppet-property_list_key
+  specs:
+    property_list_key (0.2.0)
 
 GITHUBTARBALL
   remote: grahamgilbert/puppet-dockutil
@@ -216,11 +226,13 @@ DEPENDENCIES
   phantomjs (= 2.1.0)
   pkgconfig (= 1.0.0)
   prezto (= 1.0.1)
+  property_list_key (= 0.2.0)
   python (= 2.0.1)
   repository (= 2.3.0)
   ruby (= 7.2.4)
   stdlib (= 4.1.0)
   sudo (= 1.0.0)
+  tmux (= 1.0.2)
   transmission (= 1.1.0)
   vagrant (= 3.0.7)
   virtualbox (= 1.0.11)

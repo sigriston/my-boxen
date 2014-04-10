@@ -82,8 +82,6 @@ node default {
   include packer
   include flux
   include iterm2::dev
-  include iterm2::colors::solarized_dark
-  include iterm2::colors::solarized_light
   include wget
   include transmission
   include chrome
@@ -95,6 +93,7 @@ node default {
   include git-flow
   include python
   include zsh
+  include tmux
 
   # personal prezto branch
   class { 'prezto': repo => 'sigriston/prezto' }
@@ -241,14 +240,14 @@ node default {
     python  => $python3
   }
 
-  python::package { 'virtualenv for ${python3}':
+  python::package { "virtualenv for ${python3}":
     package => 'virtualenv',
     python  => $python3
   }
 
   python::plugin { 'pyenv-virtualenvwrapper':
-    source => 'yyuu/pyenv-virtualenvwrapper',
-    ensure => 'v20140321'
+    ensure => 'v20140321',
+    source => 'yyuu/pyenv-virtualenvwrapper'
   }
 
   # common, useful packages
@@ -269,7 +268,7 @@ node default {
   # powerline fonts
   $powerlinefonts = "${boxen::config::srcdir}/powerline-fonts"
   repository { $powerlinefonts:
-    source  => "Lokaltog/powerline-fonts",
+    source  => 'Lokaltog/powerline-fonts',
     require => File[$boxen::config::srcdir]
   }
   $fontsdest = '/Library/Fonts'
@@ -282,13 +281,13 @@ node default {
   # zsh-notify repo
   $zshnotify = "/Users/${::boxen_user}/.zsh-notify"
   repository { $zshnotify:
-    source  => "marzocchi/zsh-notify"
+    source  => 'marzocchi/zsh-notify'
   }
 
   # dotfiles
   $dotfilesdir = "${boxen::config::srcdir}/dotfiles"
   repository { $dotfilesdir:
-    source  => "sigriston/dotfiles",
+    source  => 'sigriston/dotfiles',
     require => File[$boxen::config::srcdir]
   }
   $dothomedir = "/Users/${::boxen_user}"
@@ -306,5 +305,19 @@ node default {
     ensure  => link,
     target  => "${dotfilesdir}/vim/gvimrc",
     require => Repository[$dotfilesdir]
+  }
+
+  # iTerm2 config
+  $it2plist = 'com.googlecode.iterm2.plist'
+  $it2plsrc = "puppet:///modules/people/sigriston/plists/${it2plist}"
+  $it2pldst = "/Users/${::boxen_user}/Library/Preferences/${it2plist}"
+  file { $it2pldst:
+    ensure => file,
+    source => $it2plsrc
+  }
+  ~>
+  exec { 'persist iTerm2 Preference changes':
+    command     => 'killall cfprefsd && sleep 3',
+    refreshonly => true,
   }
 }
