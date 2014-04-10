@@ -284,4 +284,50 @@ node default {
   repository { $zshnotify:
     source  => "marzocchi/zsh-notify"
   }
+
+  # dotfiles
+  $dotfilesdir = "${boxen::config::srcdir}/dotfiles"
+  repository { $dotfilesdir:
+    source  => "sigriston/dotfiles",
+    require => File[$boxen::config::srcdir]
+  }
+  $dothomedir = "/Users/${::boxen_user}"
+  file { "${dothomedir}/.gitconfig":
+    ensure  => link,
+    target  => "${dotfilesdir}/git/gitconfig",
+    require => Repository[$dotfilesdir]
+  }
+  file { "${dothomedir}/.vimrc":
+    ensure  => link,
+    target  => "${dotfilesdir}/vim/vimrc",
+    require => Repository[$dotfilesdir]
+  }
+  file { "${dothomedir}/.gvimrc":
+    ensure  => link,
+    target  => "${dotfilesdir}/vim/gvimrc",
+    require => Repository[$dotfilesdir]
+  }
+
+  # vundle
+  $vimdir = "${dothomedir}/.vim"
+  file { $vimdir:
+    ensure  => directory,
+    require => File["${dothomedir}/.vimrc"]
+  }
+  $vimbundledir = "${vimdir}/bundle"
+  file { $vimbundledir:
+    ensure  => directory,
+    require => File["${dothomedir}/.vimrc"]
+  }
+  repository { "${vimbundledir}/vundle":
+    source  => "gmarik/vundle",
+    require => File[$vimbundledir]
+  }
+  exec { "Install vundle packages":
+    command => "vim +PluginInstall +qall",
+    require => [
+      Repository["${vimbundledir}/vundle"],
+      Class["macvim"]
+    ]
+  }
 }
