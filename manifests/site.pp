@@ -307,27 +307,4 @@ node default {
     target  => "${dotfilesdir}/vim/gvimrc",
     require => Repository[$dotfilesdir]
   }
-
-  # vundle
-  $vimdir = "${dothomedir}/.vim"
-  file { $vimdir:
-    ensure  => directory,
-    require => File["${dothomedir}/.vimrc"]
-  }
-  $vimbundledir = "${vimdir}/bundle"
-  file { $vimbundledir:
-    ensure  => directory,
-    require => File["${dothomedir}/.vimrc"]
-  }
-  repository { "${vimbundledir}/vundle":
-    source  => "gmarik/vundle",
-    require => File[$vimbundledir]
-  }
-  exec { "Install vundle packages":
-    command => "vim +PluginInstall +qall",
-    require => [
-      Repository["${vimbundledir}/vundle"],
-      Class["macvim"]
-    ]
-  }
 }
