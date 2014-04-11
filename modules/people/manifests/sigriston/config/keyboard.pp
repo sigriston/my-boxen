@@ -10,7 +10,7 @@ class people::sigriston::config::keyboard {
     provider => shell,
     command  => "defaults write com.apple.HIToolbox AppleEnabledInputSources -array-add '<dict><key>InputSourceKind</key><string>Keyboard Layout</string><key>KeyboardLayout ID</key><integer>${kbd_id}</integer><key>KeyboardLayout Name</key><string>${kbd_name}</string></dict>'",
     cwd      => $people::sigriston::config::home_dir,
-    user     => $::boxen_user
+    user     => $::boxen_user,
     unless   => $kbd_unless,
   }
   ->
@@ -18,7 +18,7 @@ class people::sigriston::config::keyboard {
     provider => shell,
     command  => "defaults write ${people::sigriston::config::plist} ${kbd_plist_key} -bool true",
     cwd      => $people::sigriston::config::home_dir,
-    user     => $::boxen_user
+    user     => $::boxen_user,
     unless   => $kbd_unless,
   }
 }
