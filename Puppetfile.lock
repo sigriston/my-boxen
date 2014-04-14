@@ -9,6 +9,11 @@ GITHUBTARBALL
     git-flow (0.2.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-alfred
+  specs:
+    alfred (1.1.8)
+
+GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
     boxen (3.4.2)
@@ -199,6 +204,7 @@ GITHUBTARBALL
     module-data (0.0.3)
 
 DEPENDENCIES
+  alfred (= 1.1.8)
   boxen (= 3.4.2)
   chrome (= 1.1.2)
   ctags (= 1.0.0)
