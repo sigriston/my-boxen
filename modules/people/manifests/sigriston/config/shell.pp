@@ -1,5 +1,6 @@
 class people::sigriston::config::shell {
   require people::sigriston::config
+  require homebrew
 
   # zsh ftw
   include zsh
@@ -15,4 +16,7 @@ class people::sigriston::config::shell {
   repository { $zshnotify:
     source  => 'marzocchi/zsh-notify'
   }
+
+  # fasd
+  package { 'fasd': }
 }
