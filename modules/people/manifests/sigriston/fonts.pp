@@ -13,4 +13,9 @@ class people::sigriston::fonts {
     creates => "${fontsdest}/DejaVu Sans Mono for Powerline.ttf",
     require => Repository[$powerlinefonts]
   }
+  exec { 'Install SourceCodePro Font':
+    command => "cp ${powerlinefonts}/SourceCodePro/*.otf ${fontsdest}",
+    creates => "${fontsdest}/Sauce Code Powerline Regular.otf",
+    require => Repository[$powerlinefonts]
+  }
 }
