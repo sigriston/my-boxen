@@ -10,6 +10,7 @@ class people::sigriston::apps::terminals {
   file { $it2pldst:
     ensure  => file,
     replace => false,
+    mode    => '0600',
     source  => $it2plsrc
   }
   ~>
