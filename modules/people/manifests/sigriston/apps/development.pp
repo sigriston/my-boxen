@@ -7,6 +7,7 @@ class people::sigriston::apps::development {
   include packer
   include ctags
   include git-flow
+  include sequel_pro
 
   # .gitconfig
   file { "${people::sigriston::config::home_dir}/.gitconfig":
