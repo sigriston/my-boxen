@@ -2,7 +2,7 @@ class people::sigriston::apps::development::python {
   include python
 
   # python3
-  $python3 = '3.3.5'
+  $python3 = '3.4.1'
   python::version { $python3: }
 
   # python3 packages
@@ -17,7 +17,7 @@ class people::sigriston::apps::development::python {
   }
 
   python::plugin { 'pyenv-virtualenvwrapper':
-    ensure => 'v20140321',
+    ensure => 'v20140609',
     source => 'yyuu/pyenv-virtualenvwrapper'
   }
 }

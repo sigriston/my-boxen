@@ -199,11 +199,6 @@ GITHUBTARBALL
     property_list_key (0.2.1)
 
 GITHUBTARBALL
-  remote: mloberg/puppet-python
-  specs:
-    python (2.0.1)
-
-GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.0.3)
@@ -217,6 +212,11 @@ GITHUBTARBALL
   remote: ripienaar/puppet-module-data
   specs:
     module-data (0.0.3)
+
+GITHUBTARBALL
+  remote: sigriston/puppet-python
+  specs:
+    python (2.0.2)
 
 DEPENDENCIES
   alfred (= 1.2.0)
@@ -248,7 +248,7 @@ DEPENDENCIES
   pkgconfig (= 1.0.0)
   prezto (= 1.0.1)
   property_list_key (= 0.2.1)
-  python (= 2.0.1)
+  python (= 2.0.2)
   repository (= 2.3.0)
   ruby (= 8.0.4)
   sequel_pro (= 1.0.1)
