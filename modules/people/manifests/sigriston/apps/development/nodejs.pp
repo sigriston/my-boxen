@@ -1,4 +1,7 @@
 class people::sigriston::apps::development::nodejs {
+
+  include nodejs::v0_10
+
   # default to node v0.10
   class { 'nodejs::global':
     version => 'v0.10'
