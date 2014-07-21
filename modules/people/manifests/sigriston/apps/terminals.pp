@@ -1,7 +1,7 @@
 class people::sigriston::apps::terminals {
   require people::sigriston::config
 
-  include iterm2::dev
+  include iterm2::stable
 
   # iTerm2 config
   $it2plist = 'com.googlecode.iterm2.plist'
