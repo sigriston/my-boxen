@@ -40,7 +40,7 @@ class people::sigriston::apps::development::nodejs {
     node_version => 'v0.10'
   }
 
-  nodejs::module { 'jshint':
+  nodejs::module { 'eslint':
     node_version => 'v0.10'
   }
 
