@@ -154,6 +154,11 @@ GITHUBTARBALL
     skype (1.0.8)
 
 GITHUBTARBALL
+  remote: boxen/puppet-spectacle
+  specs:
+    spectacle (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
@@ -259,6 +264,7 @@ DEPENDENCIES
   ruby (= 8.1.2)
   sequel_pro (= 1.0.1)
   skype (= 1.0.8)
+  spectacle (= 1.0.0)
   stdlib (= 4.2.2)
   sudo (= 1.0.0)
   tmux (= 1.0.2)
