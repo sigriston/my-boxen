@@ -9,6 +9,7 @@ class people::sigriston::apps::development {
   include git-flow
   include sequel_pro
   include java
+  include jmeter
 
   # .gitconfig
   file { "${people::sigriston::config::home_dir}/.gitconfig":
