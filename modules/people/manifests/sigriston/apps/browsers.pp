@@ -1,4 +1,6 @@
 class people::sigriston::apps::browsers {
-  include firefox
+  class { 'firefox':
+    version => '31.0'
+  }
   include chrome
 }
