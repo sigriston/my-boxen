@@ -10,6 +10,8 @@ class people::sigriston::apps::development {
   include sequel_pro
   include java
   include jmeter
+  include docker
+  include fig
 
   # .gitconfig
   file { "${people::sigriston::config::home_dir}/.gitconfig":

@@ -33,7 +33,7 @@ github "boxen", "3.7.0"
 
 # Support for default hiera data in modules
 
-github "module_data", "0.0.3", :repo => "ripienaar/puppet-module-data"
+github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
@@ -87,3 +87,5 @@ github "sequel_pro",        "1.0.1"
 github "java",              "1.7.1"
 github "spectacle",         "1.0.0"
 github "jmeter",            "0.1.4"
+github "docker",            "0.6.0"
+github "fig",               "1.0.0"
