@@ -63,4 +63,8 @@ class people::sigriston::apps::development::nodejs {
   nodejs::module { 'sloc':
     node_version => 'v0.10'
   }
+
+  nodejs::module { 'yo':
+    node_version => 'v0.10'
+  }
 }
