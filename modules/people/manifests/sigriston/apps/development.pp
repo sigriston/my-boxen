@@ -6,7 +6,6 @@ class people::sigriston::apps::development {
   include virtualbox
   include packer
   include ctags
-  include git-flow
   include sequel_pro
   include java
   include jmeter
