@@ -1,5 +1,6 @@
 class people::sigriston::apps::development {
   require people::sigriston::config
+  require homebrew
 
   include vagrant
   include phantomjs::1_9_0
@@ -18,6 +19,9 @@ class people::sigriston::apps::development {
     target  => "${people::sigriston::config::dotfiles_dir}/git/gitconfig",
     require => Repository[$people::sigriston::config::dotfiles_dir]
   }
+
+  # homebrew packages
+  package { 'jq': }
 
   include people::sigriston::apps::development::nodejs
   include people::sigriston::apps::development::ruby
