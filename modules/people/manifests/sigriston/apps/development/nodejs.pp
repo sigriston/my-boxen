@@ -67,4 +67,8 @@ class people::sigriston::apps::development::nodejs {
   nodejs::module { 'yo':
     node_version => 'v0.10'
   }
+
+  nodejs::module { 'html2jade':
+    node_version => 'v0.10'
+  }
 }
