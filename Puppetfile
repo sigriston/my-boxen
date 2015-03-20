@@ -29,7 +29,7 @@ end
 # Includes many of our custom types and providers, as well as global
 # config. Required.
 
-github "boxen", "3.10.3"
+github "boxen", "3.10.4"
 
 # Support for default hiera data in modules
 
@@ -44,16 +44,16 @@ github "foreman",     "1.2.0"
 github "gcc",         "2.2.0"
 github "git",         "2.7.6"
 github "go",          "2.1.0"
-github "homebrew",    "1.11.5"
+github "homebrew",    "1.12.0"
 github "hub",         "1.4.0"
 github "inifile",     "1.1.1", :repo => "puppetlabs/puppetlabs-inifile"
 github "nginx",       "1.4.4"
-github "nodejs",      "4.0.0"
+github "nodejs",      "4.0.1"
 github "openssl",     "1.0.0"
 github "phantomjs",   "2.3.0"
 github "pkgconfig",   "1.0.0"
 github "repository",  "2.3.0"
-github "ruby",        "8.3.1"
+github "ruby",        "8.5.0"
 github "stdlib",      "4.2.2", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.2.1"
@@ -62,7 +62,7 @@ github "xquartz",     "1.2.1"
 # https://github.com/boxen.
 
 github "property_list_key", "0.2.1", :repo => "glarizza/puppet-property_list_key"
-github "vagrant",           "3.2.2"
+github "vagrant",           "3.3.0"
 github "osx",               "2.8.0"
 github "virtualbox",        "1.0.13"
 github "firefox",           "1.2.3"
@@ -84,7 +84,7 @@ github "alfred",            "1.3.1"
 github "vlc",               "1.1.0"
 github "skype",             "1.1.0"
 github "sequel_pro",        "1.0.1"
-github "java",              "1.8.0"
+github "java",              "1.8.2"
 github "spectacle",         "1.0.0"
 github "jmeter",            "0.1.5"
 github "docker",            "0.9.0"
